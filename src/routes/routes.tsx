@@ -6,6 +6,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import { adminPathsTo } from "./admin.routes";
 import { routerGenerator } from "../utils/routerGenerator";
+import { studentPathsTo } from "./student.routes";
 // import { adminPaths } from "./admin.routes";
 
 
@@ -28,6 +29,11 @@ const router = createBrowserRouter([
         path: "/admin",
         element: <App/>,
         children: routerGenerator(adminPathsTo)
+    },
+    {
+        path: "/student",
+        element: <App/>,
+        children: routerGenerator(studentPathsTo)
     },
     {
         path: "/login",

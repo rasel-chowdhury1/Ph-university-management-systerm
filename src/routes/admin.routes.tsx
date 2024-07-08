@@ -1,4 +1,5 @@
 // import { ReactNode } from "react";
+import AcademicSemister from "../pages/admin/academicManagement/AcademicSemister";
 import AdminDashboard from "../pages/admin/AdminDashboard";
 import CreateAdmin from "../pages/admin/CreateAdmin";
 import CreateFaculty from "../pages/admin/CreateFaculty";
@@ -25,6 +26,16 @@ export const adminPathsTo = [
         name: "Profile",
         path: "profile",
         element: <Profile/>
+    },
+    {
+        name: "Academic Management",
+        children: [
+            {
+                name: "Academic Semister",
+                path: "academic-semister",
+                element: <AcademicSemister/>
+            }
+        ]
     },
     {
         name: "User Management",

@@ -4,12 +4,12 @@ import { TSidebar, TUserPath } from "../types";
 
 
 
-export const sidebarItemsGenerator = (item : TUserPath[]) => {
+export const sidebarItemsGenerator = (item : TUserPath[], role: string) => {
     const sidebarItems = item.reduce( (acc : TSidebar[], item) => {
         if(item.path && item.element){
           acc.push({
               key: item.name,
-              label: <NavLink to={`/admin/${item.path}`}>{item.name}</NavLink>
+              label: <NavLink to={`/${role}/${item.path}`}>{item.name}</NavLink>
           })
         }
   
