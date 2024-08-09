@@ -1,5 +1,5 @@
 import Profile from "../pages/Profile";
-import AdminDashboard from "../pages/admin/AdminDashboard";
+import AdminDashboard from "../pages/admin/userManagement/AdminDashboard";
 
 
 export const facultyPathsTo = [
