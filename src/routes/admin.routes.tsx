@@ -11,6 +11,13 @@ import CreateFaculty from "../pages/admin/userManagement/CreateFaculty";
 import CreateStudent from "../pages/admin/userManagement/CreateStudent";
 // import { NavLink } from "react-router-dom";
 import Profile from "../pages/Profile";
+import StudentData from "../pages/admin/userManagement/StudentData";
+import SemesterRegistration from "../pages/admin/courseManagement/SemesterRegistration";
+import RegisteredSemesters from "../pages/admin/courseManagement/RegisteredSemesters";
+import CreateCourse from "../pages/admin/courseManagement/CreateCourse";
+import Courses from "../pages/admin/courseManagement/Courses";
+import OfferCourse from "../pages/admin/courseManagement/OfferCourse";
+import OfferedCourses from "../pages/admin/courseManagement/OfferedCourses";
 
 // type TRoute = {
 //     path: string,
@@ -68,13 +75,19 @@ export const adminPathsTo = [
 
         ]
     },
+
     {
         name: "User Management",
         children: [
            {
-            name: "Create Admin",
-            path: "create-admin",
-            element: <CreateAdmin/>
+            name: "Create Student",
+            path: "create-student",
+            element: <CreateStudent/>
+           },
+           {
+            name: "Students",
+            path: "student-data",
+            element: <StudentData/>
            },
            {
             name: "Create Faculty",
@@ -82,12 +95,49 @@ export const adminPathsTo = [
             element: <CreateFaculty/>
            },
            {
-            name: "Create Student",
-            path: "create-student",
-            element: <CreateStudent/>
-           }
+            name: "Create Admin",
+            path: "create-admin",
+            element: <CreateAdmin/>
+           },
+           
         ]
-    }
+    },
+
+    {
+        name: 'Course Management',
+        children: [
+          {
+            name: 'Semester Registration',
+            path: 'semester-registration',
+            element: <SemesterRegistration />,
+          },
+          {
+            name: 'Registered Semesters',
+            path: 'registered-semesters',
+            element: <RegisteredSemesters />,
+          },
+          {
+            name: 'Create Course',
+            path: 'create-course',
+            element: <CreateCourse />,
+          },
+          {
+            name: 'Courses',
+            path: 'courses',
+            element: <Courses />,
+          },
+          {
+            name: 'Offer Course',
+            path: 'offer-course',
+            element: <OfferCourse />,
+          },
+          {
+            name: 'Offered Courses',
+            path: 'offered-courses',
+            element: <OfferedCourses />,
+          },
+        ],
+      },
 ]
 
 // export const adminSidebarItems = adminPathsTo.reduce( (acc : TSidebar[], item) => {

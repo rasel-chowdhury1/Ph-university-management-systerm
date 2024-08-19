@@ -28,14 +28,61 @@ const academicManagementApi = baseApi.injectEndpoints({
                 }
             }
         }),
+
         addAcademicSemister: builder.mutation({
             query: (data) => ({
                 url: "/academicSemister/create-academic-semister",
                 method: "POST",
                 body: data
             })
-        })
+        }),
+
+        getAcademicFaculties: builder.query({
+            query: () => {
+              return { url: '/academic-faculties', method: 'GET' };
+            },
+            transformResponse: (response: TResponseRedux<TAcademicFaculty[]>) => {
+              return {
+                data: response.data,
+                meta: response.meta,
+              };
+            },
+        }),
+
+        addAcademicFaculty: builder.mutation({
+            query: (data) => ({
+              url: '/academic-faculties/create-academic-faculty',
+              method: 'POST',
+              body: data,
+            }),
+        }),
+
+        getAcademicDepartments: builder.query({
+            query: () => {
+              return { url: '/academic-departments', method: 'GET' };
+            },
+            transformResponse: (response: TResponseRedux<TAcademicDepartment[]>) => {
+              return {
+                data: response.data,
+                meta: response.meta,
+              };
+            },
+        }),
+
+        addAcademicDepartment: builder.mutation({
+            query: (data) => ({
+              url: '/academic-departments/create-academic-department',
+              method: 'POST',
+              body: data,
+            }),
+        }),
+      
     })
 })
 
-export const {useGetAllSemisterQuery, useAddAcademicSemisterMutation} = academicManagementApi;
+export const {
+    useGetAllSemisterQuery, 
+    useAddAcademicSemisterMutation,
+    useGetAcademicDepartmentsQuery,
+    useGetAcademicFacultiesQuery,
+} = academicManagementApi;

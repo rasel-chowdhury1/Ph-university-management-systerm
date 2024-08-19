@@ -2,7 +2,7 @@ import { FieldValues, SubmitHandler } from "react-hook-form";
 import PHForm from "../../../components/form/PHForm";
 import { Button, Col, Flex } from "antd";
 import PHSelect from "../../../components/form/PHSelect";
-import { monthNames } from "../../../constrant/globar";
+import { monthNames } from "../../../constrant/global";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { academicSemisterSchema } from "../../../schema/academicSemister.schema";
 import { useAddAcademicSemisterMutation } from "../../../redux/features/admin/academicManagementApi";
