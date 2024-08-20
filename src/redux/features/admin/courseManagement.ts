@@ -30,7 +30,7 @@ import { baseApi } from '../../api/baseApi';
       }),
       addRegisteredSemester: builder.mutation({
         query: (data) => ({
-          url: '/semester-registrations/create-semester-registration',
+          url: '/semister-registration/create-semister-registration',
           method: 'POST',
           body: data,
         }),
@@ -38,7 +38,7 @@ import { baseApi } from '../../api/baseApi';
       }),
       updateRegisteredSemester: builder.mutation({
         query: (args) => ({
-          url: `/semester-registrations/${args.id}`,
+          url: `/semester-registration/${args.id}`,
           method: 'PATCH',
           body: args.data,
         }),

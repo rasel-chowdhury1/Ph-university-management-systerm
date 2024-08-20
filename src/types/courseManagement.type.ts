@@ -2,7 +2,7 @@ import { TAcademicSemester } from '.';
 
 export type TSemester = {
   _id: string;
-  academicSemester: TAcademicSemester;
+  academicSemister: TAcademicSemester;
   status: string;
   startDate: string;
   endDate: string;
