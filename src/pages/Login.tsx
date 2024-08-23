@@ -28,11 +28,20 @@ const Login = () => {
 
         try {
             const res = await login(userData).unwrap() // when not use unwrap.return {data:{data: {}}} but use this then return only {data: {}}
+            
+            console.log({res})
+
+            if (res?.data?.needsPasswordChange) {
+                navigate(`/change-password`);
+              } 
+            else{     
+            
             const user = tokenVerify(res.data.accessToken) as TUser;
             console.log({user})
             dispatch(setUser({user, token: res.data.accessToken}))
             toast("Successfully login user...", {id: toastId, duration: 1000})
             navigate(`/${user.role}/dashboard`)
+            }
         } catch (error) {
             toast("Something went wrong!")
             console.log({error})

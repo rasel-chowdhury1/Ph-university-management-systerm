@@ -7,6 +7,9 @@ import Register from "../pages/Register";
 import { adminPathsTo } from "./admin.routes";
 import { routerGenerator } from "../utils/routerGenerator";
 import { studentPathsTo } from "./student.routes";
+import PrivateRoute from "../components/layout/PrivateRoute";
+import { facultyPathsTo } from "./faculty.routes";
+import ChangePassword from "../pages/ChangePassword";
 // import { adminPaths } from "./admin.routes";
 
 
@@ -27,17 +30,26 @@ const router = createBrowserRouter([
     },
     {
         path: "/admin",
-        element: <App/>,
+        element: <PrivateRoute role="admin"> <App/> </PrivateRoute>,
         children: routerGenerator(adminPathsTo)
     },
     {
         path: "/student",
-        element: <App/>,
+        element: (<PrivateRoute role="student"> <App/> </PrivateRoute>),
         children: routerGenerator(studentPathsTo)
+    },
+    {
+        path: "/faculty",
+        element: <PrivateRoute role="faculty"> <App/> </PrivateRoute>,
+        children: routerGenerator(facultyPathsTo)
     },
     {
         path: "/login",
         element: <Login/>
+    },
+    {
+        path: "/change-password",
+        element: <ChangePassword/>
     },
     {
         path: "/register",

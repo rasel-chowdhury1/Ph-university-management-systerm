@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <PrivateRoute>
+      <PrivateRoute role={undefined}>
          <MainLayout/>
       </PrivateRoute>
     </>

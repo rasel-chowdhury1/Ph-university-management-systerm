@@ -84,6 +84,22 @@ import { baseApi } from '../../api/baseApi';
         }),
         invalidatesTags: ['courses'],
       }),
+      getCourseFaculties: builder.query({
+        query: (id) => {
+        },
+        transformResponse: (response: TResponseRedux<any>) => {
+          return {
+            data: response.data,
+            meta: response.meta,
+          };
+        },
+      }),
+      createOfferedCourse: builder.mutation({
+        query: (data) => ({
+        }),
+        invalidatesTags: ['courses'],
+      }),
+  
     }),
   });
   
@@ -94,4 +110,6 @@ import { baseApi } from '../../api/baseApi';
     useGetAllCoursesQuery,
     useAddCourseMutation,
     useAddFacultiesMutation,
+    useCreateOfferedCourseMutation,
+    useGetCourseFacultiesQuery
   } = courseManagementApi;
